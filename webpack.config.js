@@ -14,9 +14,10 @@ rules.push({
 });
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/root/js/index.js',
     output: {
-        filename: '[name].[hash].js',
+        // filename: '[name].[hash].js',
+        filename: './src/script.js',
         path: path.resolve('dist')
     },
     devtool: 'source-map',
@@ -32,7 +33,8 @@ module.exports = {
         new ExtractTextPlugin('styles.css'),
         new HtmlPlugin({
             title: 'Loft School sample project',
-            template: 'index.hbs'
+            // template: 'index.hbs'
+            template: './src/index.html'
         }),
         new CleanWebpackPlugin(['dist'])
     ]
